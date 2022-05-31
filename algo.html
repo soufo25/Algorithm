@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithim Checkpoint</title>
+</head>
+<body>
+
+<script>
+
+var sentence = "We Are The World Beyond"
+var word = sentence.toLocaleLowerCase();
+var length = sentence.length
+
+console.log(length);
+
+function getVowels(str) {
+  var vowelsCount = 0;
+  var string = str.toString();
+  for (var i = 0; i <= string.length - 1; i++) {
+    if (string.charAt(i) == "o" || string.charAt(i) == "e" ||string.charAt(i) =="u"||string.charAt(i) == "i" || string.charAt(i)== "a" ) {
+      vowelsCount += 1;
+    }
+  }
+  return vowelsCount;
+}
+console.log(getVowels(word));
+
+
+function getSpace(str) {
+  var spaceCount = 0;
+  var string = str.toString();
+  for (var i = 0; i <= string.length - 1; i++) {
+    if (string.charAt(i) == " ") {
+      spaceCount += 1;
+    }
+  }
+  return spaceCount;
+}
+
+console.log(getSpace(word));
+
+</script>
+    
+</body>
+</html>
