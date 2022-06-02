@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear Checkpoint</title>
+</head>
+<body>
+    
+<script>
+
+
+     // variables//
+
+    let strArr1 = [12, 13, 11, 6, 10]; 
+    let strArr2 = [13, 10, 16, 15,]
+    let strArr3= []
+    let doNotMatch = [];
+    let sum = 0 
+    let sumnotmatch =0
+
+    // matching numbers and sum//
+    strArr3 = strArr2.filter(item => 
+    strArr1.includes(item)).concat(strArr1.filter(item =>strArr2.includes(item)));
+     sum = strArr3.reduce((a,b) => (a+b));
+
+     console.log(strArr3);
+     console.log (sum)
+
+     // none matching numbers and sum//
+
+    doNotMatch = strArr2.filter(item => 
+    !strArr1.includes(item)).concat(strArr1.filter(item =>!strArr2.includes(item)));
+     sumnofmatch = doNotMatch.reduce((a,b) => (a+b));
+
+    console.log(doNotMatch);
+    console.log(sumnofmatch);
+     
+
+
+
+// alternative formular//
+
+ function arrayDifference(strArr1, strArr2) {
+    var arr = [];
+    strArr1 = strArr1.toString().split(',').map(Number);
+   strArr2 = strArr2.toString().split(',').map(Number);
+    for (var i in strArr1) {
+       if(strArr2.indexOf(strArr1[i]) === -1)
+       arr.push(strArr1[i]);
+    }
+    for(i in strArr2) {
+       if(strArr1.indexOf(strArr2[i]) === -1)
+       arr.push(strArr2[i]);
+    }
+    return arr.sort((a,b) => a-b);
+ }
+console.log(arrayDifference(strArr1, strArr2))
+
+
+// Creating a hash table //
+
+function SumHash(x, y) {
+  var sum = 0;
+  var z = x.concat(y);
+  var object = {};
+  for (var i in z) {
+    if (!object[z[i]]) {
+      object[z[i]] = 1;
+    } else {
+      ++object[z[i]]
+    }
+  }
+  Object.keys(object).forEach(function (key) {
+    if (object[key] == 1) {
+      sum += parseInt(key)
+    }
+  })
+  console.log(object, sum);
+}
+SumHash(strArr1, strArr2);
+
+    </script>
+</body>
+</html> 
