@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Programming</title>
+</head>
+<body>
+    <script>
+
+ /*procedure
+ please not the procedure keeps 
+ so i decided to comments it
+var Procedure = Dotproduct;
+var ps = v1.v2;
+var IR = [[v1],[v2]];*/
+
+ 
+
+ // function
+
+ var v1 = [1,2,-3]
+ var v2 = [3,8,5]
+ function dot_product(ps){
+     let IR = [[v1,v2]]
+     let sum  = 0;
+     for (let i in v1){
+         for (let j in v2){
+             if (sum===0){
+                 return  "orthogonal";
+                } else {
+                    return  "not orthogonal";
+                }
+            }
+            sum += v1[i]*v2[j];
+     }
+     return sum
+ };
+ console.log(dot_product(v1,v2));
+ 
+    </script>
+</body>
+</html>
